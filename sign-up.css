@@ -159,6 +159,7 @@ h2 {
     [alt='sign-up-image'] {
         content: url("./assets/images/illustration-sign-up-mobile.svg");
         width: 100vw;
+        margin-top: -10px;
     }
 
     #main {
