@@ -1,0 +1,191 @@
+:root {
+    --Dark-Slate-Grey: hsl(234, 29%, 20%);
+    --Charcoal-Grey: hsl(235, 18%, 26%);
+    --Grey: hsl(231, 7%, 60%);
+    --White: hsl(0, 0%, 100%);
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./assets/fonts/Roboto-Regular.ttf');
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--Charcoal-Grey);
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--White);
+    padding: 20px;
+    border-radius: 30px;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    margin: auto;
+    color: var(--Dark-Slate-Grey);
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin: 0;
+}
+
+ul {
+    margin-top: 0;
+    padding-left: 20px;
+}
+
+::marker {
+    content: url("./assets/images/icon-list.svg");
+    padding-left: 10px;
+}
+
+li {
+    padding-left: 10px;
+    margin: 10px 0;
+}
+
+#main label {
+    font-weight: bold;
+    font-size: .8rem;
+    position: relative;
+}
+
+#email-input {
+    /*42 px = 20px(left padding) + 20px(right padding) + 1px(left border) + 1px(right border) */
+    width: calc(100% - 42px);
+    margin: 10px 0;
+    padding: 15px 20px;
+    border: 1px solid var(--Grey);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+[type='submit'] {
+    width: 100%;
+    background-color: var(--Dark-Slate-Grey);
+    border: none;
+    padding: 20px 0;
+    margin-top: 10px;
+    color: var(--White);
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+:is([type='submit'],#success button):hover {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    box-shadow: 0 4px 15px rgba(255, 126, 95, 0.4);
+}
+
+#error-text {
+    display: none;
+    position: absolute;
+    top: -15px;
+    left: 270px;
+    width: 115px;
+    color: #FE6352;
+}
+
+#success {
+    display: none;
+    flex-direction: column;
+    gap: 40px;
+    background-color: var(--White);
+    width: 30vw;
+    padding: 60px;
+    border-radius: 40px;
+}
+
+[alt='icon'] {
+    width: 15%;
+}
+
+h2 {
+    color: var(--Dark-Slate-Grey);
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+#success p {
+    font-size: 1.2rem;
+    line-height: 25px;
+    margin: 0;
+    color: var(--Dark-Slate-Grey);
+}
+
+#success p span {
+    font-weight: bold;
+}
+
+#success button {
+    font-size: 1.2rem;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    color: var(--White);
+    background-color: var(--Dark-Slate-Grey);
+    cursor: pointer;
+    transition: .3s;
+}
+
+@media only screen and (max-width: 575.98px) {
+    body {
+        background-color: var(--White);
+    }
+
+    main {
+        width: 100vw;
+        height: 100vh;
+        flex-direction: column-reverse;
+        padding: 0;
+        border-radius: 0;
+    }
+
+    [alt='sign-up-image'] {
+        content: url("./assets/images/illustration-sign-up-mobile.svg");
+        width: 100vw;
+    }
+
+    #main {
+        font-size: 1.2rem;
+        width: calc(100% - 40px);
+        margin: 30px 20px;
+        justify-content: space-between;
+        align-items: center;
+        flex: 1;
+    }
+
+    h1, h2 {
+        font-size: 2.5rem;
+    }
+
+    #email-input {
+        font-size: 1.2rem;
+    }
+
+    #success {
+        width: calc(100% - 20px);
+        padding: 10px;
+    }
+
+    #success button {
+        position: absolute;
+        bottom: 0;
+        width: calc(100% - 40px);
+    }
+}
